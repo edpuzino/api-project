@@ -3,7 +3,7 @@
 import { startDB, stopDB } from '../../supergoose.js';
 
 import auth from '../../../src/auth/middleware.js';
-import Users from '../../../src/auth/model.js';
+import Users from '../../../src/auth/users-model.js';
 
 // beforeAll(startDB);
 
@@ -30,10 +30,10 @@ afterAll(stopDB);
  */
 describe('Auth Middleware', () => {
   
-  // admin:password: YWRtaW46cGFzc3dvcmQ=
-  // admin:foo: YWRtaW46Zm9v
-  // editor:password: ZWRpdG9yOnBhc3N3b3Jk
-  // user:password: dXNlcjpwYXNzd29yZA==
+  admin.password= 'YWRtaW46cGFzc3dvcmQ=';
+  admin.foo= 'YWRtaW46Zm9v';
+  editor.password= 'ZWRpdG9yOnBhc3N3b3Jk';
+  user.password= 'dXNlcjpwYXNzd29yZA==';
   
   let errorObject = {"message": "Invalid User ID/Password", "status": 401, "statusMessage": "Unauthorized"};
   

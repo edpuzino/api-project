@@ -52,7 +52,7 @@ module.exports = {
   startSSL: () => {
     let certOptions = {
       key: fs.readFileSync(path.resolve('./server.key')),
-      cert: fs.readFileSync(path.resolve('./server.crt'))
+      cert: fs.readFileSync(path.resolve('./server.crt')),
     };
 
     var server = https.createServer(certOptions, app).listen(443);

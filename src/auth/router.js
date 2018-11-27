@@ -36,9 +36,9 @@ authRouter.post('/roles', (req, res, next) => {
     .catch(next);
 });
 
-authRouter.get('/oauth', async (req, res, next) => {
+authRouter.get('/oauth', (req, res, next) => {
   try {
-    let token = await oauth.authorize(req);
+    let token = oauth.authorize(req);
     res.cookie('auth', token);
     res.send(token);
   }
